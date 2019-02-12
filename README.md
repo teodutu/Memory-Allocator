@@ -2,7 +2,7 @@
 
 Un alocator de memorie simplificat, ce implementeaza urmatoarele functii
 
-## INITIALIZE <N>
+## INITIALIZE N
 
 - prima comanda apelata;
 
@@ -21,25 +21,25 @@ Un alocator de memorie simplificat, ce implementeaza urmatoarele functii
 - similar cu hexdump.
 
 
-## ALLOC <SIZE>
+## ALLOC SIZE
 
 - aloca `SIZE` octeti pe prima pozitie de la stanga la dreapta din arena in care acest lucru este posibil;
 
 - returneaza adresa de inceput a zonei alocate.
 
-## FREE <INDEX>
+## FREE INDEX
 
 - elibereaza memoria ce incepe la pozitia `INDEX`;
 
 - `INDEX` este o pozitie returnata de `ALLOC`.
 
-## FILL <INDEX> <SIZE> <VALUE>
+## FILL INDEX SIZE VALUE
 
 - seteaza `SIZE` octeti incepand cu pozitia `INDEX` la valoarea `VALUE`;
 
 - similar cu un `memset`.
 
-## SHOW <INFO>
+## SHOW INFO
 
 - ofera statistici despre starea memoriei;
 
@@ -51,13 +51,13 @@ Un alocator de memorie simplificat, ce implementeaza urmatoarele functii
 	
 	- **ALLOCATIONS**: afiseaza pentru fiecare zona, daca este libera sau alocata impreuna cu dimensiunea acestora;
 	
-	- **MAP <LENGTH>**: afiseaza un sir de `LENGTH` caractere, care ilustreaza memoria gestionata: `*` reprezinta o zona alocata, iar `.` una nealocata.
+	- **MAP LENGTH**: afiseaza un sir de `LENGTH` caractere, care ilustreaza memoria gestionata: `*` reprezinta o zona alocata, iar `.` una nealocata.
 	
-## ALLOCALIGNED <SIZE> <ALIGN>
+## ALLOCALIGNED SIZE ALIGN
 
 - face acelasi lucru ca `ALLOC`, dar aloca doar la un index care este multiplu de `ALIGN`, unde `ALIGN` este o putere a lui 2.
 
-## REALLOC <INDEX> <SIZE>
+## REALLOC INDEX SIZE
 
 - realoca zona de memorie de la pozitia `INDEX` cu noua dimensiune de `SIZE`;
 
@@ -69,7 +69,7 @@ Un alocator de memorie simplificat, ce implementeaza urmatoarele functii
 
 - returneaza un vector care face legatura dintre vechii indecsi ai zonelor de memorie si cei noi.
 
-## SAFE_FILL <INDEX> <SIZE> <VALUE>
+## SAFE_FILL INDEX SIZE VALUE
 
 - functia `FILL` risca sa suprascrie octeti unde nu ar trebuis sa aiba acces;
 
